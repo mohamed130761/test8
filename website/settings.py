@@ -28,9 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'test8-ivory.vercel.app',
-
-    'localhost',
-    '127.0.0.1'
+    'www.dr-mostafa-mahmoud.online',
 ]
 
 
@@ -44,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,8 +53,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "https://www.dr-mostafa-mahmoud.online",
+    "http://127.0.0.1:8000",
+]
 
 
 ROOT_URLCONF = 'website.urls'
